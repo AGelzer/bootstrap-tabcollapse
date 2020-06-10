@@ -26,6 +26,7 @@
     TabCollapse.DEFAULTS = {
         accordionClass: 'd-block d-lg-none',
         tabsClass: 'd-none d-lg-flex',
+        tabsContentClass: 'd-none d-lg-block',
         accordionTemplate: function(heading, groupId, parentId, active) {
             return  '<div class="card card-block">' +
                     '   <div class="card-heading ' + (active ? 'active' : '') + '">' +
@@ -198,7 +199,7 @@
         this.$accordion = $('<div class="card-group ' + this.options.accordionClass + '" id="' + accordionId +'"></div>');
         this.$tabs.after(this.$accordion);
         this.$tabs.addClass(this.options.tabsClass);
-        this.getTabContentElement().addClass(this.options.tabsClass);
+        this.getTabContentElement().addClass(this.options.tabsContentClass);
     };
 
     TabCollapse.prototype._createAccordionGroup = function(parentId, $heading){
